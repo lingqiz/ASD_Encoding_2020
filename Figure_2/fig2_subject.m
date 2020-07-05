@@ -13,7 +13,8 @@ color2 = colormap(7, :);
 color3 = colormap(5, :);
 plotColor = [color1; color2; color3];
     
-plotSubject('./woFB/TD/*.mat', './wFB1/TD/*.mat', './wFB2/TD/*.mat', 'Control-', './SubjectPlot/TD', plotColor, 1, false, true);
+subID = 1;
+plotSubject('./woFB/TD/*.mat', './wFB1/TD/*.mat', './wFB2/TD/*.mat', 'Control-', './SubjectPlot/TD', plotColor, subID, false, true);
 
 %% Plot individual data - ASD
 % ASD - Figure 6
@@ -23,10 +24,11 @@ color2 = colormap(7, :);
 color3 = colormap(5, :);
 plotColor = [color1; color2; color3];
 
-plotSubject('./woFB/ASD/*.mat', './wFB1/ASD/*.mat', './wFB2/ASD/*.mat', 'ASD-', './SubjectPlot/ASD', plotColor, 6, true, false)
+subID = 6;
+plotSubject('./woFB/ASD/*.mat', './wFB1/ASD/*.mat', './wFB2/ASD/*.mat', 'ASD-', './SubjectPlot/ASD', plotColor, subID, true, false)
 
 %% Helper function
-function plotSubject(dirWoFB, dirWFB1, dirWFB2, titleStr, saveBaseDir, colors, targetIdx, showXlabel, showTitle)
+function plotSubject(dirWoFB, dirWFB1, dirWFB2, titleStr, saveBaseDir, colors, targetIdx, ~, showTitle)
 
     function input = wrapOrientation(input)
         assert(sum(input > 360) == 0 && sum(input < 0) == 0);

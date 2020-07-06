@@ -5,9 +5,9 @@ addpath('./Figure_3/');
 
 %% Number of bootstrap, we used 5,000 our analysis
 % Statistical tests are based on bootstrap samples
-nBootstrap = 5000;
+nBootstrap = 500;
 
-nBins = 25;
+nBins = 30; 
 errScale = 1;
 colormap = cbrewer('seq', 'YlGnBu', 9);
 
@@ -15,7 +15,7 @@ color1 = colormap(9, :);
 color2 = colormap(7, :); 
 color3 = colormap(5, :);
 
-%% Plot
+%% Plot for control subject
 load('woFB_td.mat');
 [~, allBias_woFB, allVariance_woFB, allFisher_woFB, allTotal_woFB, allRMSE_woFB] = bootstrap(allTarget', allResponse', nBootstrap, nBins);
 
@@ -50,9 +50,9 @@ set(gca,'yticklabel',[])
 %% ASD Group
 % Number of bootstrap, we used 5,000 our analysis
 % Statistical tests are based on bootstrap samples
-nBootstrap = 5000;
+nBootstrap = 500;
 
-nBins = 25;
+nBins = 30;
 errScale = 1;
 colormap = cbrewer('seq', 'YlOrRd', 9);
 
@@ -69,7 +69,7 @@ load('wFB1_asd.mat');
 load('wFB2_asd.mat');
 [range, allBias_wFB2, allVariance_wFB2, allFisher_wFB2, allTotal_wFB2, allRMSE_wFB2] = bootstrap(allTarget', allResponse', nBootstrap, nBins);
 
-%% Plot
+%% Plot for asd group
 figure(1);
 
 l1 = plotExtract(range, allBias_woFB, allVariance_woFB, allFisher_woFB, allRMSE_woFB, 2, color1, true, errScale, 1);

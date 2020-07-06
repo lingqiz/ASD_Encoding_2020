@@ -6,18 +6,19 @@ addpath('./cbrewer/');
 addpath('./Figure_2/');
 
 %% Plot individual data - TD
-% Control - Figure 1
+% Control, Subject #1
+% Color for woFB, wFB1, wFB2
 colormap = cbrewer('seq', 'YlGnBu', 9);
 color1 = colormap(9, :); 
 color2 = colormap(7, :);
 color3 = colormap(5, :);
 plotColor = [color1; color2; color3];
-    
+
 subID = 1;
 plotSubject('./woFB/TD/*.mat', './wFB1/TD/*.mat', './wFB2/TD/*.mat', 'Control-', './SubjectPlot/TD', plotColor, subID, false, true);
 
 %% Plot individual data - ASD
-% ASD - Figure 6
+% ASD - Subject #6
 colormap = cbrewer('seq', 'YlOrRd', 9);
 color1 = colormap(9, :); 
 color2 = colormap(7, :);

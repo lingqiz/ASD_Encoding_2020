@@ -1,3 +1,8 @@
+%% Add path
+addpath('CircStat/');
+addpath('cbrewer/');
+addpath('Figure_S1_S5/');
+
 %% Construct prior
 domain = 0 : 0.01 : 2 * pi;
 vonmPrior = @(x) vonmpdf(x, pi, 0.5);

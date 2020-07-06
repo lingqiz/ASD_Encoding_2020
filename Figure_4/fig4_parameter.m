@@ -5,7 +5,7 @@ addpath('./Figure_4/');
 
 %% TD Group Level
 % nBootstrap = 5e3 in our analysis 
-nBootstrap = 5e3; nBins = 30; 
+nBootstrap = 5e3; nBins = 45; 
 load('woFB_td.mat');
 [scale_woFB_td, noise_woFB_td] = bootstrap(allTarget', allResponse', nBootstrap, nBins);
 
@@ -17,7 +17,7 @@ load('wFB2_td.mat');
 
 %% ASD Group Level
 % nBootstrap = 5e3 in our analysis
-nBootstrap = 5e3; nBins = 30;
+nBootstrap = 5e3; nBins = 45;
 load('woFB_asd.mat');
 [scale_woFB_asd, noise_woFB_asd] = bootstrap(allTarget', allResponse', nBootstrap, nBins);
 
@@ -56,7 +56,7 @@ errorbar(3.2, mean(scale_wFB2_asd, 2), std(scale_wFB2_asd, 0, 2), '--o', 'LineWi
 
 plot([0.8, 2, 3.2], mean([scale_woFB_asd; scale_wFB1_asd; scale_wFB2_asd], 2), '--', 'LineWidth', 2, 'Color', color2);
 
-xlim([0.5, 3.5]); xticks([0.8, 2, 3.2]); ylim([0.2, 0.7]);
+xlim([0.5, 3.5]); xticks([0.8, 2, 3.2]); ylim([0.25, 0.75]);
 xticklabels({'woFB', 'wFB1', 'wFB2'});
 xlabel('FB block ', 'interpreter', 'latex');
 

@@ -7,7 +7,7 @@ addpath('./Figure_3/');
 % Statistical tests are based on bootstrap samples
 nBootstrap = 5000;
 
-nBins = 30;
+nBins = 25;
 errScale = 1;
 colormap = cbrewer('seq', 'YlGnBu', 9);
 
@@ -52,7 +52,7 @@ set(gca,'yticklabel',[])
 % Statistical tests are based on bootstrap samples
 nBootstrap = 5000;
 
-nBins = 30;
+nBins = 25;
 errScale = 1;
 colormap = cbrewer('seq', 'YlOrRd', 9);
 

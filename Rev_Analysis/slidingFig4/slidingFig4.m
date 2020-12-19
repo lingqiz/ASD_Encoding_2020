@@ -1,8 +1,7 @@
 %% Add path
 addpath('../CircStat');
 addpath('../cbrewer/');
-addpath('./Figure_4/');
-addpath('./DataSplit/');
+addpath('./slidingFig4/');
 
 %% TD Group Level
 nBootstrap = 5e3; nBins = 45;
@@ -104,14 +103,3 @@ ylabel('$ \lambda $', 'interpreter', 'latex'); yticks(10 : 2 : 20);
 title('$$ \lambda $$ - Total $$ \sqrt{I_{F}(\theta)} $$', 'interpreter', 'latex');
 
 legend([l1, l2], {'Control', 'ASD'});
-
-%% Helper (bootstrap) function
-function [scale, noise] = bootstrap(allTarget, allResponse, nBootstrap, nBins)
-    scale = zeros(1, nBootstrap);
-    noise = zeros(1, nBootstrap);
-    
-    parfor idx = 1:nBootstrap
-        [target, response] = resample(allTarget, allResponse);
-        [scale(idx), noise(idx)] = fitExtract(target, response, nBins);
-    end
-end

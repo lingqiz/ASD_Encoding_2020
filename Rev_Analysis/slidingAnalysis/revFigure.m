@@ -111,6 +111,7 @@ end
 end
 
 function plotTemporal(allPrior, allFisher, pltColor, xLB, xUB)
+
 nPoint = size(allPrior, 2);
 
 subplot(1, 2, 1); hold on;

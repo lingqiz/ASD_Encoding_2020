@@ -6,7 +6,7 @@ assert(nSubject == length(responseData));
 p = inputParser;
 p.addParameter('binSize', 0.40);
 p.addParameter('delta', 0.02);
-p.addParameter('nBootstrap', 1e3);
+p.addParameter('nBootstrap', 500);
 p.addParameter('nBins', 20);
 parse(p, varargin{:});
 

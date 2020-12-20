@@ -52,7 +52,8 @@ end
 
 binSize = 0.20;
 [allPrior, allFisher] = ...
-    slidingWindow(targetData, responseData, 'binSize', binSize, 'delta', 0.01, 'nBootstrap', 1e3, 'nBins', 30);
+    slidingWindow(targetData, responseData, 'binSize', binSize, ...
+    'delta', 0.01, 'nBootstrap', 500, 'nBins', 30);
 
 xLB = 0; xUB = 6;
 plotTemporal(allPrior, allFisher, pltColor, xLB, xUB);
@@ -73,7 +74,8 @@ for nDataset = 1:length(dataSet)
 end
 
 [allPrior, allFisher] = ...
-    slidingWindow(targetData, responseData, 'binSize', binSize, 'delta', 0.01, 'nBootstrap', 1e3, 'nBins', 30);
+    slidingWindow(targetData, responseData, 'binSize', binSize, ...
+    'delta', 0.01, 'nBootstrap', 500, 'nBins', 30);
 
 plotTemporal(allPrior, allFisher, pltColor, xLB, xUB);
 
@@ -100,8 +102,7 @@ function analysisPlot(dataSet, colormap)
 
 for idx = 1:length(dataSet)
     load(dataSet{idx});
-    [allPrior, allFisher] = slidingWindow(targetData, responseData);
-    nPoint = size(allPrior, 2);
+    [allPrior, allFisher] = slidingWindow(targetData, responseData);    
     
     pltColor = colormap(11-2*idx, :);
     plotTemporal(allPrior, allFisher, pltColor, 2*idx-2, 2*idx-0.5)    

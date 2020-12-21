@@ -1,4 +1,4 @@
-function [scale, noise, l1, l2] = fitExtract(allTarget, allResponse, nBins, showPlot, mirror, plotData, plotColor)
+function [scale, noise, bias, variance] = fitExtract(allTarget, allResponse, nBins, showPlot, mirror, plotData, plotColor)
 
 if ~exist('showPlot','var')
     showPlot = false;
@@ -18,7 +18,9 @@ end
 
 [average, spread, range] = extractPrior(allTarget, allResponse, nBins, mirror, plotData, plotColor);
 [paras] = expectedBias(average, spread, range, showPlot, plotColor);
+
 scale = paras(1); noise = paras(2);
+bias = mean(abs(average)); variance = mean(sqrt(abs(spread)));
 
 end
 

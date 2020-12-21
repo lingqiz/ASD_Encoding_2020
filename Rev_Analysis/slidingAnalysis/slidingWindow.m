@@ -1,13 +1,13 @@
-function [allPrior, allFisher] = slidingWindow(targetData, responseData, varargin)
+function [allPrior, allFisher, allBias, allVariance] = slidingWindow(targetData, responseData, varargin)
 
 nSubject = length(targetData);
 assert(nSubject == length(responseData));
 
 p = inputParser;
-p.addParameter('binSize', 0.40);
-p.addParameter('delta', 0.02);
+p.addParameter('binSize', 0.30);
+p.addParameter('delta', 0.025);
 p.addParameter('nBootstrap', 500);
-p.addParameter('nBins', 20);
+p.addParameter('nBins', 15);
 parse(p, varargin{:});
 
 % sliding window through temporal data
@@ -21,6 +21,8 @@ nBins = p.Results.nBins;
 % run analysis
 allPrior = [];
 allFisher = [];
+allBias = [];
+allVariance = [];
 for binEdge = 0 : delta : (1 - binSize)
     target = [];
     response = [];
@@ -43,9 +45,13 @@ for binEdge = 0 : delta : (1 - binSize)
         response = [response, subResponse(idxLB : idxUB)];
     end
     
-    [prior, fisher] = bootstrap(target', response', nBootstrap, nBins);
+    [prior, fisher, bias, variance] = bootstrap(target', response', nBootstrap, nBins);
         
     allPrior = [allPrior, prior'];
     allFisher = [allFisher, fisher'];
+    allBias = [allBias, bias'];
+    allVariance = [allVariance, variance'];
 end
 
+allBias = allBias ./ (2 * pi) * 180.0;
+allVariance = allVariance ./ (2 * pi) * 180.0;

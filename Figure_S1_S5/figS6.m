@@ -89,7 +89,7 @@ xticklabels({'woFB', 'wFB1', 'wFB2'});
 %% For control group
 para_woFB = fmincon(@(x) lossFunc(x, 0.54, 18.83, 0.085), 0.5, [], [], [], [], 0, 1);
 para_wFB1 = fmincon(@(x) lossFunc(x, 0.40, 18.83, 0.085), 0.5, [], [], [], [], 0, 1);
-para_wFB2 = fmincon(@(x) lossFunc(x, 0.34, 18.83, 0.085), 0.5, [], [], [], [], 0, 1);
+para_wFB2 = fmincon(@(x) lossFunc(x, 0.34, 18.83, 0.0), 0.5, [], [], [], [], 0, 1);
 
 figure(); subplot(1, 2, 1); hold on;
 errorbar(0.8, mean(scale_woFB_td, 2), std(scale_woFB_td, 0, 2), '--ob', 'LineWidth', 2);

@@ -46,22 +46,23 @@ errorbar(0.8, mean(scale_woFB_td, 2), std(scale_woFB_td, 0, 2), '--ob', 'LineWid
 errorbar(2.0, mean(scale_wFB1_td, 2), std(scale_wFB1_td, 0, 2), '--ob', 'LineWidth', 2);
 errorbar(3.2, mean(scale_wFB2_td, 2), std(scale_wFB2_td, 0, 2), '--ob', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], mean([scale_woFB_td; scale_wFB1_td; scale_wFB2_td], 2), '--b', 'LineWidth', 2);
+l1 = plot([0.8, 2, 3.2], mean([scale_woFB_td; scale_wFB1_td; scale_wFB2_td], 2), '--b', 'LineWidth', 2);
 
 errorbar(0.8, mean(scale_woFB_asd, 2), std(scale_woFB_asd, 0, 2), '--or', 'LineWidth', 2);
 errorbar(2.0, mean(scale_wFB1_asd, 2), std(scale_wFB1_asd, 0, 2), '--or', 'LineWidth', 2);
 errorbar(3.2, mean(scale_wFB2_asd, 2), std(scale_wFB2_asd, 0, 2), '--or', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], mean([scale_woFB_asd; scale_wFB1_asd; scale_wFB2_asd], 2), '--r', 'LineWidth', 2);
+l2 = plot([0.8, 2, 3.2], mean([scale_woFB_asd; scale_wFB1_asd; scale_wFB2_asd], 2), '--r', 'LineWidth', 2);
 
 errorbar(0.8, para_woFB, std(scale_woFB_asd, 0, 2), '--ok', 'LineWidth', 2);
 errorbar(2.0, para_wFB1, std(scale_wFB1_asd, 0, 2), '--ok', 'LineWidth', 2);
 errorbar(3.2, para_wFB2, std(scale_wFB2_asd, 0, 2), '--ok', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], [para_woFB; para_wFB1; para_wFB2], '--k', 'LineWidth', 2);
+l3 = plot([0.8, 2, 3.2], [para_woFB; para_wFB1; para_wFB2], '--k', 'LineWidth', 2);
 
 xlim([0.5, 3.5]); xticks([0.8, 2, 3.2]); ylim([0.25, 0.8]);
 xticklabels({'woFB', 'wFB1', 'wFB2'});
+legend([l1, l2, l3], {'TD', 'ASD', 'Simulation'});
 
 subplot(1, 2, 2); hold on;
 
@@ -81,10 +82,11 @@ errorbar(0.8, 16.75, std(scale_woFB_asd, 0, 2), '-ok', 'LineWidth', 2);
 errorbar(2.0, 16.75, std(scale_wFB1_asd, 0, 2), '-ok', 'LineWidth', 2);
 errorbar(3.2, 16.75, std(scale_wFB2_asd, 0, 2), '-ok', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], [16.75, 16.75, 16.75], '-k', 'LineWidth', 2);
+l3 = plot([0.8, 2, 3.2], [16.75, 16.75, 16.75], '--k', 'LineWidth', 2);
 
 xlim([0.5, 3.5]); xticks([0.8, 2, 3.2]);
 xticklabels({'woFB', 'wFB1', 'wFB2'});
+legend([l1, l2, l3], {'TD', 'ASD', 'Simulation'});
 
 %% For control group
 para_woFB = fmincon(@(x) lossFunc(x, 0.54, 18.83, 0.085), 0.5, [], [], [], [], 0, 1);
@@ -96,22 +98,23 @@ errorbar(0.8, mean(scale_woFB_td, 2), std(scale_woFB_td, 0, 2), '--ob', 'LineWid
 errorbar(2.0, mean(scale_wFB1_td, 2), std(scale_wFB1_td, 0, 2), '--ob', 'LineWidth', 2);
 errorbar(3.2, mean(scale_wFB2_td, 2), std(scale_wFB2_td, 0, 2), '--ob', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], mean([scale_woFB_td; scale_wFB1_td; scale_wFB2_td], 2), '--b', 'LineWidth', 2);
+l1 = plot([0.8, 2, 3.2], mean([scale_woFB_td; scale_wFB1_td; scale_wFB2_td], 2), '--b', 'LineWidth', 2);
 
 errorbar(0.8, mean(scale_woFB_asd, 2), std(scale_woFB_asd, 0, 2), '--or', 'LineWidth', 2);
 errorbar(2.0, mean(scale_wFB1_asd, 2), std(scale_wFB1_asd, 0, 2), '--or', 'LineWidth', 2);
 errorbar(3.2, mean(scale_wFB2_asd, 2), std(scale_wFB2_asd, 0, 2), '--or', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], mean([scale_woFB_asd; scale_wFB1_asd; scale_wFB2_asd], 2), '--r', 'LineWidth', 2);
+l2 = plot([0.8, 2, 3.2], mean([scale_woFB_asd; scale_wFB1_asd; scale_wFB2_asd], 2), '--r', 'LineWidth', 2);
 
 errorbar(0.8, para_woFB, std(scale_woFB_asd, 0, 2), '--ok', 'LineWidth', 2);
 errorbar(2.0, para_wFB1, std(scale_wFB1_asd, 0, 2), '--ok', 'LineWidth', 2);
 errorbar(3.2, para_wFB2, std(scale_wFB2_asd, 0, 2), '--ok', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], [para_woFB; para_wFB1; para_wFB2], '--k', 'LineWidth', 2);
+l3 = plot([0.8, 2, 3.2], [para_woFB; para_wFB1; para_wFB2], '--k', 'LineWidth', 2);
 
 xlim([0.5, 3.5]); xticks([0.8, 2, 3.2]); ylim([0.25, 0.8]);
 xticklabels({'woFB', 'wFB1', 'wFB2'});
+legend([l1, l2, l3], {'TD', 'ASD', 'Simulation'});
 
 subplot(1, 2, 2); hold on;
 
@@ -131,10 +134,11 @@ errorbar(0.8, 18.83, std(scale_woFB_asd, 0, 2), '-ok', 'LineWidth', 2);
 errorbar(2.0, 18.83, std(scale_wFB1_asd, 0, 2), '-ok', 'LineWidth', 2);
 errorbar(3.2, 18.83, std(scale_wFB2_asd, 0, 2), '-ok', 'LineWidth', 2);
 
-plot([0.8, 2, 3.2], [18.83, 18.83, 18.83], '-k', 'LineWidth', 2);
+l3 = plot([0.8, 2, 3.2], [18.83, 18.83, 18.83], '--k', 'LineWidth', 2);
 
 xlim([0.5, 3.5]); xticks([0.8, 2, 3.2]);
 xticklabels({'woFB', 'wFB1', 'wFB2'});
+legend([l1, l2, l3], {'TD', 'ASD', 'Simulation'});
 
 %% Helper function
 

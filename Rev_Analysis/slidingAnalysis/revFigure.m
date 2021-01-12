@@ -12,7 +12,7 @@ dataSet = {'TD_woFB.mat', 'TD_wFB1.mat', 'TD_wFB2.mat'};
 
 analysisPlot(dataSet, colormap, paraPlot, statPlot);
 
-%% Run sliding window analysis: ASD
+% Run sliding window analysis: ASD
 colormap = cbrewer('seq', 'YlOrRd', 9);
 dataSet = {'ASD_woFB.mat', 'ASD_wFB1.mat', 'ASD_wFB2.mat'};
 
@@ -24,7 +24,7 @@ subplot(1, 2, 1);
 xticks([0.75, 2.75, 4.75]);
 xticklabels({'woFB', 'wFB1', 'wFB2'});
 xlabel('FB block');
-ylim([0.1, 0.7]);
+ylim([0.0, 0.8]);
 title('Prior Omega');
 
 subplot(1, 2, 2);

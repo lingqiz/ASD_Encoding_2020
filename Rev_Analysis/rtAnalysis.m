@@ -24,8 +24,16 @@ for idx = 1:nPlot
     RT = sort(RT);
     avgRT = median(RT);
     
+    nResample = 1e3;
+    allRT = zeros(1, nResample);
+    for idy = 1:nResample
+        index = 1:length(RT);
+        sampleIdx = datasample(index, length(RT));
+        allRT(idy) = median(RT(sampleIdx));
+    end
+    
     avgLine = xline(avgRT, '--k', 'LineWidth', 2);
-    text(avgRT + 1, max(ylim) * 0.95, sprintf('%.2f sec', avgRT));
+    text(avgRT + 1, max(ylim) * 0.95, sprintf('%.2f +/- %.3f', avgRT, std(allRT)));
     
     xlabel('RT (sec)');
     ylabel('Probability');

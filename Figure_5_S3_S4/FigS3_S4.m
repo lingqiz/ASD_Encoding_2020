@@ -7,54 +7,34 @@ addpath('./Figure_5_S3_S4/');
 [prior_td, noise_td]   = collectFit('./woFB/TD/*.mat', './wFB1/TD/*.mat', './wFB2/TD/*.mat', 25);
 [prior_asd, noise_asd] = collectFit('./woFB/ASD/*.mat', './wFB1/ASD/*.mat', './wFB2/ASD/*.mat', 17);
 
-%% Plot figures 5
+%% Plot figures S3
 % Note for convenience, we saved all the paramters extracted with the function above 
 % together with the clinical data in the .mat file below
 load('para_clinical.mat');
 scoreID = 5;
 
 figure(); 
-set(gcf,'Position',[0, 0, 720, 1080]);
+set(gcf,'Position',[0, 0, 1000, 1000]);
 
 %% prior woFB
-subplot(3, 2, 5);
+subplot(2, 2, 3);
 sessionID = 2; % Before learning
 corrPlotPrior(prior_td, prior_asd, sessionID, scoreID, 'AQ', 'Prior woFB', [0.0, 1.0], 0 : 0.2 : 1);
 
 %% prior wFB2
-subplot(3, 2, 6);
+subplot(2, 2, 4);
 sessionID = 4; % After learning
 corrPlotPrior(prior_td, prior_asd, sessionID, scoreID, 'AQ', 'Prior wFB2', [0.0, 1.0], 0 : 0.2 : 1);
 
 %% FI woFB
-subplot(3, 2, 3);
+subplot(2, 2, 1);
 sessionID = 2; % Before learning
 corrPlotFI(noise_td, noise_asd, sessionID, scoreID, 'AQ', 'FI woFB', [5, 30], 5 : 5 : 30);
 
 %% FI wFB2
-subplot(3, 2, 4);
+subplot(2, 2, 2);
 sessionID = 4; % After learning
 corrPlotFI(noise_td, noise_asd, sessionID, scoreID, 'AQ', 'FI wFB2', [5, 30], 5 : 5 : 30);
-
-%% Correlation, FI before feedback with prior
-subplot(3, 2, 1);
-colormap = cbrewer('seq', 'YlGnBu', 9);
-color_td = colormap(7, :);
-
-colormap = cbrewer('seq', 'YlOrRd', 9);
-color_asd = colormap(7, :);
-
-colIdx = 4;
-scatter(noise_td(:, 2), prior_td(:, colIdx), 40, color_td, 'filled'); hold on;
-scatter(noise_asd(:, 2), prior_asd(:, colIdx), 40, color_asd, 'filled');
-xlabel('FI before learning'); ylabel('Prior after learning');
-
-grid off;
-lm = fitlm([noise_td(:, 2); noise_asd(:, 2)], [prior_td(:, colIdx); prior_asd(:, colIdx)], 'linear')
-line = plot(xlim(), xlim() * lm.Coefficients.Estimate(2) + lm.Coefficients.Estimate(1), '--k', 'LineWidth', 2);
-
-ylim([0, 1]);
-yticks(0 : 0.2 : 1);
 
 %% Plot figures S4
 % Note for convenience, we saved all the paramters extracted with the function above 
@@ -63,7 +43,7 @@ load('para_clinical.mat');
 scoreID = 6;
 
 figure(); 
-set(gcf,'Position',[0, 0, 720, 1080]);
+set(gcf,'Position',[0, 0, 1000, 1000]);
 
 %% prior woFB
 subplot(2, 2, 3);

@@ -55,7 +55,7 @@ xlabel('Measurement');
 ylabel('Estimate');
 
 % Arbitrarily change the mapping
-caseId = 6;
+caseId = 1;
 switch caseId
     case 0
         
@@ -89,7 +89,7 @@ switch caseId
         plot(estimator.ivsStmSpc, mappingValue, 'r', 'LineWidth', 2);
         estimator.estimates = mappingValue;
     case 6
-        mappingValue = estimator.snsSpc + 0.2 * cos(3 * estimator.snsSpc);
+        mappingValue = estimator.snsSpc + 0.1 * cos(3 * estimator.snsSpc);
         
         hold on;
         plot(estimator.ivsStmSpc, mappingValue, 'r', 'LineWidth', 2);

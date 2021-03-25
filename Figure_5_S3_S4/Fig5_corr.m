@@ -54,32 +54,6 @@ ylim([0, 0.8]);
 yticks(0 : 0.2 : 1);
 legend([line1, line2], {'p < 0.001', 'p = 0.052'});
 
-%% Plot corr with AQ score by group
-load('para_clinical.mat');
-scoreID = 5;
-
-figure();
-
-%% prior woFB
-subplot(2, 2, 1);
-sessionID = 2; % Before learning
-corrPlot(prior_td, prior_asd, sessionID, scoreID, 'AQ', 'Prior woFB', [0.0, 1.0], 0 : 0.2 : 1);
-
-%% prior wFB2
-subplot(2, 2, 2);
-sessionID = 4; % After learning
-corrPlot(prior_td, prior_asd, sessionID, scoreID, 'AQ', 'Prior wFB2', [0.0, 1.0], 0 : 0.2 : 1);
-
-%% FI woFB
-subplot(2, 2, 3);
-sessionID = 2; % Before learning
-corrPlot(noise_td, noise_asd, sessionID, scoreID, 'AQ', 'FI woFB', [5, 30], 5 : 5 : 30);
-
-%% FI wFB2
-subplot(2, 2, 4);
-sessionID = 4; % After learning
-corrPlot(noise_td, noise_asd, sessionID, scoreID, 'AQ', 'FI wFB2', [5, 30], 5 : 5 : 30);
-
 %% Helper functions
 function corrPlot(td, asd, sID, cID, xStr, yStr, ylimArray, ytickArray)
 

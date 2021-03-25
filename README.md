@@ -12,7 +12,7 @@ https://www.biorxiv.org/content/10.1101/2020.03.04.976191v1
 - For most of the analysis, we use the `.mat` files in the root directory are data for the combined subject across conditions; Data for each indivudal subject can be found in `./woFB` (without feedback), `./wFB1` (with feedback 1), and `./wFB2` (with feedback 2).
 
 ## Code Usage
-- **Set the root directory of the project as the current directory of MATLAB.** 
+- **Set the root directory of the project as the current directory of MATLAB.** See special instructions below for reproducing Figure S5 and S6.  
 - Each folder contains one or more matlab script(s) (and other helper function files) that produce the corresponding figure in the paper, as indicated by its name.
 - Run the "addpath" section first with the "Run Section" function in MATLAB (to include helper functions in the path), and then run the entire script.
 - Here is a short summary of the structure of this repo:

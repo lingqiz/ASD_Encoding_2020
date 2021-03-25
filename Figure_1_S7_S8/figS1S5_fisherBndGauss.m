@@ -1,7 +1,7 @@
 %% Add path
 addpath('CircStat/');
 addpath('cbrewer/');
-addpath('Figure_S1_S5/');
+addpath('Figure_1_S7_S8/');
 
 %% Construct prior
 domain = 0 : 0.01 : 2 * pi;

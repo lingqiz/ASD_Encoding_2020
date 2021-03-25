@@ -1,7 +1,7 @@
 %% Add path
 addpath('CircStat/');
 addpath('cbrewer/');
-addpath('Figure_S1_S5/');
+addpath('Figure_1_S7_S8/');
 
 %% Simulation
 [domain1, fisher1] = fisherPlot(0.5, 5.0, 1);

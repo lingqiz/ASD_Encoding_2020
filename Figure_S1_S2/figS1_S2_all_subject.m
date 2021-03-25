@@ -2,7 +2,7 @@
 dataDir = './woFB/TD/*.mat';
 addpath('CircStat/');
 addpath('cbrewer/');
-addpath('Figure_S2_S3/');
+addpath('Figure_S1_S2/');
 
 %% Plot individual data - TD
 % Control

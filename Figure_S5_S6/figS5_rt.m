@@ -24,6 +24,7 @@ for idx = 1:nPlot
     RT = sort(RT);
     avgRT = median(RT);
     
+    % bootstrap for getting +/- SD
     nResample = 1e3;
     allRT = zeros(1, nResample);
     for idy = 1:nResample

@@ -54,7 +54,7 @@ function plotSubject(dirWoFB, dirWFB1, dirWFB2, titleStr, saveBaseDir, colors, t
                 figure(count);
                 subplot(2, 4, plotIdx(plotOrder, :));
                 
-                nBins = 10;
+                nBins = 8;
                 [scale, noise, l1, l2] = fitExtract(target', response', nBins, true, false, true, colors(plotOrder, :));
                 
                 xticks([0, 0.5 * pi, pi, 1.5 * pi, 2 * pi]);

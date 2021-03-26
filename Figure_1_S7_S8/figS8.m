@@ -36,7 +36,9 @@ trapz(stmSpc, noiseFI)
 xticks([0, 45, 90, 135, 180]);
 xlim([0, 180]);
 
-%% Search procedure
+%% Construct artificial observer
+% ** Run Fig4 analysis first before running this code block **
+
 para_woFB = fmincon(@(x) lossFunc(x, 0.59, 16.75, 0.18), 0.5, [], [], [], [], 0, 1);
 para_wFB1 = fmincon(@(x) lossFunc(x, 0.55, 16.75, 0.18), 0.5, [], [], [], [], 0, 1);
 para_wFB2 = fmincon(@(x) lossFunc(x, 0.51, 16.75, 0.18), 0.5, [], [], [], [], 0, 1);

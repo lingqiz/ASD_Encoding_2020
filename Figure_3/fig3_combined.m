@@ -5,7 +5,7 @@ addpath('./Figure_3/');
 
 %% Number of bootstrap, we used 5,000 our analysis
 % Statistical tests are based on bootstrap samples
-nBootstrap = 500;
+nBootstrap = 5000;
 
 nBins = 30; 
 errScale = 1;
@@ -50,7 +50,7 @@ set(gca,'yticklabel',[])
 %% ASD Group
 % Number of bootstrap, we used 5,000 our analysis
 % Statistical tests are based on bootstrap samples
-nBootstrap = 500;
+nBootstrap = 5000;
 
 nBins = 30;
 errScale = 1;

@@ -1,6 +1,6 @@
 # Data and Analysis Code
 **Individuals with Autism Spectrum Disorder Have Altered Visual Encoding Capacity**  
-Jean-Paul Noel*, Ling-Qi Zhang*, Alan A. Stocker, and Dora E. Angelaki  
+Jean-Paul Noel*, Ling-Qi Zhang*, Alan A. Stocker, and Dora E. Angelaki (2021)
 https://www.biorxiv.org/content/10.1101/2020.03.04.976191v1  
 
 ## Dependencies

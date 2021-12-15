@@ -2,6 +2,7 @@
 **Individuals with Autism Spectrum Disorder Have Altered Visual Encoding Capacity**  
 Jean-Paul Noel*, Ling-Qi Zhang*, Alan A. Stocker, and Dora E. Angelaki, PLOS Biology (2021)  
 https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001215  
+[![DOI:10.1371/journal.pbio.3001215](https://zenodo.org/badge/DOI/10.1371/journal.pbio.3001215.svg)](https://doi.org/10.1371/journal.pbio.3001215)
 
 ## Dependencies
 - [MATLAB cbrewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab)

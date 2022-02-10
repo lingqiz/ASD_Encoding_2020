@@ -34,7 +34,7 @@ xticks(0 : 0.5 * pi : 2 * pi);
 xticklabels(0 : 45 : 180);
 
 yticks(0 : 0.5 * pi : 2 * pi);
-yticklabels(0 : 45 : 180);
+yticklabels(180 : -45 : 0);
 
 axis square;
 set(gca, 'box', 'off')
@@ -42,6 +42,22 @@ set(gca, 'TickDir', 'out');
 
 xlabel('Stimulus');
 ylabel('Measurement');
+
+%% Visualization of the asymmetry in measurement distribution
+figure();
+% index corresponding to 45 degree
+index = floor(length(stimDomain) / 4.0);
+
+% take a slice of the measurement distribution
+slice = densityGrid(:, index);
+plot(msmtDomain, slice, 'k', 'lineWidth', 2);
+
+xticks(0 : 0.5 * pi : 2 * pi);
+xticklabels(0 : 45 : 180);
+
+xlim([0, 2 * pi]); box off;
+xlabel('Measurement');
+ylabel('Density');
 
 %% Estimator mapping
 figure();
